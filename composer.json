@@ -1,0 +1,22 @@
+{
+    "name": "Andals/phpbox-demo",
+    "autoload": {
+        "psr-4": {"Pdemo\\": "src"}
+    },
+    "repositories": [
+        {
+            "packagist": false
+        },
+        {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/ligang1109/phpbox"
+        }
+    ],
+    "require": {
+        "ligang1109/phpbox": "dev-master"
+    }
+}
