@@ -1,0 +1,10 @@
+{
+    "isDev": true,
+    "prjName": "Pdemo",
+    "mysql": {
+        "host": "127.0.0.1",
+        "user": "root",
+        "pass": "123",
+        "port": "3306"
+    }
+}

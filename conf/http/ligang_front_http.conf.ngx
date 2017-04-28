@@ -1,0 +1,26 @@
+server {
+    listen 80;
+    server_name ligang.pdemo.com;
+    server_tokens on;
+
+    keepalive_timeout 5;
+
+    root /home/ligang/devspace/phpbox-demo/src/Run/Front/;
+    index Index.php;
+
+    charset utf-8;
+
+    include /home/ligang/devspace/phpbox-demo/conf/http/general/gzip.conf;
+
+    access_log /data/nginx/logs/ligang.pdemo.com.log combinedio buffer=1k;
+    error_log  /data/nginx/logs/ligang.pdemo.com.log.err;
+
+    if ( !-e $request_filename ) {
+        rewrite .+ /Index.php last;
+    }
+
+    location = /Index.php {
+        include /home/ligang/devspace/phpbox-demo/conf/http/general/fastcgi.conf;
+        fastcgi_pass 127.0.0.1:9000;
+    }
+}
