@@ -7,13 +7,8 @@
  */
 
 use \Phpbox\Core\System\Web;
-use \Pdemo\Conf\Server;
+use \Pdemo\ServerConf;
 
 require(dirname(__DIR__).'/Boot.php');
-
-$system = new Web(Server::getPrjName(), 'Front');
-$system->run();
-
-
-
-
+$system = new Web(ServerConf::getPrjName(), 'Front');
+$system->setErrorActionClsname('\Pdemo\System\Front\Action\Error')->run();
